@@ -71,7 +71,6 @@ ${topLetters ? `Top letters: ${topLetters}` : ""}`.trim();
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1200);
     } catch {
-      // Fallback for older/blocked clipboard environments
       const ta = document.createElement("textarea");
       ta.value = summaryText;
       document.body.appendChild(ta);
@@ -83,39 +82,8 @@ ${topLetters ? `Top letters: ${topLetters}` : ""}`.trim();
     }
   };
 
-  const downloadFile = (filename: string, content: string, type: string) => {
-    const blob = new Blob([content], { type });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
 
-  const handleExportTxt = () => {
-    downloadFile("text-summary.txt", summaryText, "text/plain;charset=utf-8");
-  };
 
-  const handleExportJson = () => {
-    const payload = {
-      text,
-      excludeSpaces,
-      characterLimit: setLimitEnabled ? characterLimit : null,
-      characters: stats.charCountWithSpaces,
-      charactersExcludingSpaces: stats.charCount,
-      words: stats.wordCount,
-      sentences: stats.sentenceCount,
-      readingTime: stats.readingTimeLabel,
-      letterDensity: stats.letterStats,
-    };
-
-    downloadFile(
-      "text-stats.json",
-      JSON.stringify(payload, null, 2),
-      "application/json"
-    );
-  };
 
   const actionBtnBase =
     "rounded-md px-3 py-2 text-sm font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed";
