@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Character Counter
 
-## Getting Started
+**Character Counter** is a modern, client-side text analysis tool that provides real-time insights into written content.  
+It analyzes characters, words, sentences, reading time, and letter frequency within a responsive, theme-aware interface.
 
-First, run the development server:
+This project was built as a **focused React practice project**, emphasizing clean component architecture, derived state, and thoughtful UI behavior.
+
+---
+
+## ✨ Features
+
+- **Real-time text analysis**
+  - Character count
+  - Word count
+  - Sentence count
+- **Character limit control**
+  - Enable or disable character limits
+  - Visual warning when limits are exceeded
+- **Flexible character counting**
+  - Include or exclude spaces
+- **Reading time estimation**
+  - Based on average reading speed
+- **Letter density visualization**
+  - Frequency distribution (A–Z) with progress indicators
+- **Theme support**
+  - Light and dark modes
+- **Responsive layout**
+  - Optimized for mobile, tablet, and desktop screens
+- **Accessible interactions**
+  - Keyboard-friendly controls
+  - Clear hover and focus states
+
+---
+
+## 🛠 Tech Stack
+
+- **React**
+- **Next.js (App Router)**
+- **Tailwind CSS**
+- **@radix-ui/react-progress** (accessible UI primitives)
+
+---
+
+## 🧠 Implementation Focus
+
+The project was designed with the following principles:
+
+- **Single source of truth** for text input
+- **Derived state** via custom hooks for text statistics
+- **Separation of concerns** between logic and presentation
+- **Reusable, composable components**
+- **Minimal dependencies** with accessible defaults
+
+Core text analysis logic is encapsulated in a custom hook, allowing UI components to remain stateless and predictable.
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
